@@ -6,7 +6,7 @@
 
 template <typename T>
 
-void    easyfind(T type, int num)
+void    easyfind(T& container, int value)
 {
     
 }

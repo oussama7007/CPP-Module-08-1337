@@ -1,11 +1,11 @@
 
 
 
-NAME        = my_program
+NAME        = easyfind
 CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 
-SRCS        = main.cpp 
+SRCS        = main.cpp easyfind.cpp
 OBJS        = $(SRCS:.cpp=.o)
 
 
@@ -15,7 +15,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS)  $(OBJS) -o $(NAME) 
 
-%.o:%.cpp
+%.o:%.cpp easyfind.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
