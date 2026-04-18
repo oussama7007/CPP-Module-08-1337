@@ -7,9 +7,21 @@
 #include <iostream>
 #include <algorithm>
 #include <exception>
+
 template <typename T>
 
-void    easyfind(T& container, int value)
+class noumfound : public std::exception
+{
+    public:
+        const char* what() const throw()
+        {
+            return ("num not found");
+        }
+}
+
+
+
+typename     easyfind(T& container, int value)
 {
     
 }
