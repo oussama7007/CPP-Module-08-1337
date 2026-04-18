@@ -19,8 +19,6 @@ class noumfound : public std::exception
         }
 }
 
-
-
 typename     easyfind(T& container, int value)
 {
     
