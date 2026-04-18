@@ -1,12 +1,8 @@
 
 
-
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
-
 
 template <typename T>
 void    test(T container)
@@ -21,3 +17,5 @@ int main()
     std::vector<int> v = {1,2,3};
     test(v);
 }
+
+

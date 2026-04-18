@@ -15,7 +15,7 @@ class noumfound : public std::exception
     public:
         const char* what() const throw()
         {
-            return ("num not found");
+            return ("Value not found in container");
         }
 }
 
