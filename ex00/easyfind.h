@@ -29,6 +29,7 @@ typename T::iterator easyfind(T &container, int value) {
 }
 
 
+
 //or 
 // template <typename T>
 // typename T::iterator easyfind(T &container, int value) {

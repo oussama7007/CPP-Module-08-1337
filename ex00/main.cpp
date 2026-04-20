@@ -39,5 +39,21 @@ int main()
 {
     
     printHeader("TEST 1: std::vector");
-    
+    std::vector<int> vec;
+    vec.push_back(11);
+    vec.push_back(11);
+    vec.push_back(123);
+    vec.push_back(12);
+    vec.push_back(110);
+    try
+    {
+            std::vector<int>::iterator it = easyfind(vec, 20);
+            std::cout << "found" << *it << "at index" << std::distance(vec.begin(), it) << std::endl;
+            
+    }
+    catch(std::exception &e)
+    {
+        std::cout << "number not found "; 
+    }
+  
 }
