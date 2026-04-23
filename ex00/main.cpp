@@ -13,5 +13,4 @@ int main()
     for(int i = 0 ; i<6; i++)
         numbers.push_back(i+10);
     
-    
 }
