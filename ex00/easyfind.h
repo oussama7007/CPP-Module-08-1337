@@ -41,3 +41,7 @@ typename T::iterator easyfind(T &container, int value) {
                                                                     //         // not found
                                                                     //             }
 // }
+
+
+
+// mli tsali 7awel traje3 hadchi o recodih caml 3ad push so u make sure 
