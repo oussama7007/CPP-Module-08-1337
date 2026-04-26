@@ -1,8 +1,8 @@
 
 
 
-#ifndef "EASYFIND_H"
-#define "EASYFIND_H"
+#ifndef EASYFIND_H
+#define EASYFIND_H
 
 
 
@@ -25,7 +25,7 @@ template <typename T>
 
 typename T::iterator easyfind(T &container, int value)
 {
-    typename T::iterator it = std::find(container.begin(), container.end(), value);;
+    typename T::iterator it = std::find(container.begin(), container.end(), value);
     if(it == container.end())
         throw except();
     return it;
