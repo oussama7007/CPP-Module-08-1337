@@ -1,49 +1,43 @@
 
 
 
-
 #pragma once
 
-
-
 #include <iostream>
-#include <stack>
+#include <stack>   // MANDATORY: Must include stack
 #include <deque>
 
-
-
-class MutantStack : public std::vector<int>
+// MANDATORY: You must tell the compiler this is a template class BEFORE the class keyword
+template <typename T>
+class MutantStack : public std::stack<T> // MANDATORY: Inherit from std::stack, not vector
 {
 public:
-    MutantStack() {}
+    // Default constructor
+    MutantStack() : std::stack<T>() {}
+    
+    // Destructor
     ~MutantStack() {}
-
-    void push(int value) {
-        stack_.push_back(value);
-    }
-
-    void pop() {
-        if (!stack_.empty()) {
-            stack_.pop_back();
+    
+    // Copy constructor
+    MutantStack(const MutantStack &other) : std::stack<T>(other) {}
+    
+    // Assignment operator
+    MutantStack &operator=(const MutantStack &other) {
+        if (this != &other) {
+            std::stack<T>::operator=(other);
         }
+        return *this;
     }
 
-    int top() const {
-        if (!stack_.empty()) {
-            return stack_.back();
-        }
-        throw std::out_of_range("Stack is empty");
+    // Typedef to expose the underlying container's iterators
+    typedef typename std::stack<T>::container_type::iterator iterator;
+
+    // Return the iterators from the protected 'c' variable
+    iterator begin() {
+        return this->c.begin();
     }
 
-    size_t size() const {
-        return stack_.size();
+    iterator end() {
+        return this->c.end();
     }
-
-    typedef std::vector<int>::iterator iterator;
-    typedef std::vector<int>::const_iterator const_iterator;
-
-    iterator begin() { return stack_.begin(); }
-    iterator end() { return stack_.end(); }
-    const_iterator begin() const { return stack_.begin(); }
-    const_iterator end() const { return stack_.end(); }
-}
+};
