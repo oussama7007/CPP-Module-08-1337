@@ -31,17 +31,21 @@
 
 
 //or 
-template <typename T>
-typename T::iterator easyfind(T &container, int value) {
-    return std::find(container.begin(), container.end(), value); //o mn be3d dik lfunction li 3iytat l easyfind ghadi dir 
-                                                                     std::vector<int>::iterator it = easyfind(vec, 42);
-                                                                        if (it != vec.end()) {
-                                                                                        // found
-                                                                            } else {
-                                                                            // not found
-                                                                                }
-}
+// template <typename T>
+// typename T::iterator easyfind(T &container, int value) {
+//     return std::find(container.begin(), container.end(), value); //o mn be3d dik lfunction li 3iytat l easyfind ghadi dir 
+//                                                                      std::vector<int>::iterator it = easyfind(vec, 42);
+//                                                                         if (it != vec.end()) {
+//                                                                                         // found
+//                                                                             } else {
+//                                                                             // not found
+//                                                                                 }
+// }
 
 
 
-// mli tsali 7awel traje3 hadchi o recodih caml 3ad push so u make sure 
+// // mli tsali 7awel traje3 hadchi o recodih caml 3ad push so u make sure 
+
+
+
+te
