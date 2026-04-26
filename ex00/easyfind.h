@@ -1,7 +1,9 @@
 
 
 
-#pragma once 
+#ifndef "EASYFIND_H"
+#define "EASYFIND_H"
+
 
 
 #include <iostream>
@@ -28,3 +30,6 @@ typename T::iterator easyfind(T &container, int value)
         throw except();
     return it;
 }
+
+
+#endif
