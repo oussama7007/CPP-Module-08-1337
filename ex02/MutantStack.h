@@ -2,14 +2,18 @@
 
 
 
-
+#pragma once
 
 
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
+#include <stack>
 
-class MutantStack 
+
+
+class MutantStack : public std::vector<int>
 {
 public:
     MutantStack() {}
