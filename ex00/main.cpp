@@ -52,18 +52,26 @@
 
 int main()
 {
+        std::cout << "======================let's test if works with the vector====================" << std::endl;
     std::vector<int>  arr;
     for(int i = 0; i < 15; i++)
         arr.push_back(i + 125);
     try
     {
-        std::iterator it = easyfind(arr, 125);
+        std::vector<int>::iterator it = easyfind(arr, 125);
         std::cout << "found " << *it << std::endl; 
-         std::iterator it = easyfind(arr, 1250);
+         std::vector<int>::iterator it2 = easyfind(arr, 1250);
+        std::cout << "this line will not appear " << *it2 << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
+    std::cout << "======================let's test if works with the list====================" << std::endl;
+
+    std::list<int> arr;
+    for(int i = 0 ; i < 12; i++)
+    {
+        
+    }
 }
