@@ -11,7 +11,7 @@
 
 
 
-// // Custom exception class (optional but nice for evaluation)
+
 // class NotFoundException : public std::exception {
 // public:
 //     const char* what() const throw() {
@@ -21,7 +21,7 @@
 
 // template <typename T>
 // typename T::iterator easyfind(T &container, int value) {
-//     // std::find returns container.end() if value not found
+    
 //     typename T::iterator it = std::find(container.begin(), container.end(), value);// std::find is a standerd algorithm that works m3a ay container cus it use iterators
 //     if (it == container.end())
 //         throw NotFoundException();
@@ -30,37 +30,9 @@
 
 
 
-//or 
-// template <typename T>
-// typename T::iterator easyfind(T &container, int value) {
-//     return std::find(container.begin(), container.end(), value); //o mn be3d dik lfunction li 3iytat l easyfind ghadi dir 
-//                                                                      std::vector<int>::iterator it = easyfind(vec, 42);
-//                                                                         if (it != vec.end()) {
-//                                                                                         // found
-//                                                                             } else {
-//                                                                             // not found
-//                                                                                 }
-// }
-
-
-
-// // mli tsali 7awel traje3 hadchi o recodih caml 3ad push so u make sure 
-
-
 template <typename T>
 
-typename  T::itreator easyfind(T &container, int value)
+typename T::iterator easyfind(T &container, int value)
 {
-    return (std::find(container.began(), container.end(), value));
-}
-
-
-int main()
-{
-    int a = 13;
-
-    std::vector<int> arr ;
-    arr.push_back(10);
-    arr.push_back(230);
-    arr()
+    T::iterator it
 }
