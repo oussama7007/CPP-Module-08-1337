@@ -47,5 +47,20 @@
 // // mli tsali 7awel traje3 hadchi o recodih caml 3ad push so u make sure 
 
 
+template <typename T>
 
-te
+typename  T::itreator easyfind(T &container, int value)
+{
+    return (std::find(container.began(), container.end(), value));
+}
+
+
+int main()
+{
+    int a = 13;
+
+    std::vector<int> arr ;
+    arr.push_back(10);
+    arr.push_back(230);
+    arr()
+}
