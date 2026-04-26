@@ -7,9 +7,8 @@
 
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
 #include <stack>
+#include <deque>
 
 
 
