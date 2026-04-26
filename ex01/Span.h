@@ -1,28 +1,35 @@
 
+#pragma once
 
-
-
-
-
-
-
+#include <vector>
 #include <algorithm>
 #include <iostream>
-
+#include <exception>
 
 class Span 
 {
-
     private:
-        std::vector<int> ;
+        std::vector<int> arr;  
+        unsigned int     max;  
+
     public:
-        Span(unsigned int N) :  {}
-        Span() {}
-        Span(const Span &obj)
-        {
-            arr = obj.arr;
-        }
+        
+        Span(); 
+        
+      
+        Span(unsigned int N);
+        
+        
+        Span(const Span &obj);
+        
+        
+        Span& operator=(const Span &obj);
+        
+        
+        ~Span();
 
+     
+        void addNumber(int number);
+        int shortestSpan();
+        int longestSpan();
 };
-
-
