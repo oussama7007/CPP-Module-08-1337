@@ -8,10 +8,12 @@ int main() {
 
     std::cout << "--- Testing with std::vector ---" << std::endl;
     std::vector<int> numbers;
-    for(int i = 0 ; i < 6; i++) {
+    for(int i = 0 ; i < 100; i++) {
         numbers.push_back(i + 10); 
     }
-
+    std::cout << "=============================================\n";
+    std::cout << sizeof(numbers) << std::endl;
+    std::cout << "=============================================\n";
     try {
         
         std::vector<int>::iterator it = easyfind(numbers, 12);
@@ -30,6 +32,9 @@ int main() {
     myList.push_back(21);
     myList.push_back(84);
 
+    std::cout << "=============================================\n";
+    std::cout << sizeof(myList) << std::endl;
+    std::cout << "=============================================\n";
     try {
         std::list<int>::iterator list_it = easyfind(myList, 42);
         std::cout << "Success: Found " << *list_it << " in list!" << std::endl;
@@ -42,3 +47,6 @@ int main() {
 
     return 0;
 }
+
+
+
