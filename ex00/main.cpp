@@ -5,9 +5,7 @@
 #include "easyfind.h"   
 
 int main() {
-    // ==========================================
-    // TEST 1: std::vector
-    // ==========================================
+
     std::cout << "--- Testing with std::vector ---" << std::endl;
     std::vector<int> numbers;
     for(int i = 0 ; i < 6; i++) {
@@ -19,16 +17,13 @@ int main() {
         std::vector<int>::iterator it = easyfind(numbers, 12);
         std::cout << "Success: Found " << *it << " in vector!" << std::endl;
 
-        // Test a failure case
+     
         std::cout << "Searching for 99..." << std::endl;
         easyfind(numbers, 99); 
     } catch (const std::exception& e) {
         std::cerr << "Caught Exception: " << e.what() << std::endl;
     }
 
-    // ==========================================
-    // TEST 2: std::list (Proves the template works)
-    // ==========================================
     std::cout << "\n--- Testing with std::list ---" << std::endl;
     std::list<int> myList;
     myList.push_back(42);
@@ -42,7 +37,7 @@ int main() {
         std::cout << "Searching for 0..." << std::endl;
         easyfind(myList, 0);
     } catch (const std::exception& e) {
-        std::cerr << "Caught Exception: " << e.what() << std::endl;
+        std::cerr << "Ciaught Excepton: " << e.what() << std::endl;
     }
 
     return 0;
