@@ -48,7 +48,7 @@ int Span::longestSpan()
     std::vector<int>::iterator min_it = std::min_element(arr.begin(), arr.end());
     std::vector<int>::iterator max_it = std::max_element(arr.begin(), arr.end());
 
-    return *max_it - *min_it;
+    return (unsigned int )*max_it - (unsigned int )*min_it;
 }
 
 

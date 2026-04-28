@@ -18,12 +18,12 @@ int main()
 
     std::cout << "--- TEST 1: Basic Subject Test ---" << std::endl;
     try {
-        Span sp = Span(5);
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
+        Span sp = Span(2000000000);
+        sp.addNumber(4000000000);
+        sp.addNumber(-2000000000);
+        // sp.addNumber(17);
+        // sp.addNumber(9);
+        // sp.addNumber(11);
         
         std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl; // Expected: 2
         std::cout << "Longest Span: " << sp.longestSpan() << std::endl;   // Expected: 14
