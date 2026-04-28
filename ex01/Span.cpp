@@ -40,34 +40,69 @@ void Span::addNumber(int number)
     arr.push_back(number);
 }
 
-unsigned int Span::longestSpan()
+static unsigned int spanDistance(int bigger, int smaller)
+{
+    return static_cast<unsigned int>(bigger) - static_cast<unsigned int>(smaller);
+}
+
+unsigned int Span::longestSpan() const
 {
     if (arr.size() < 2)
         throw Span::not_enough();
 
-    std::vector<int>::iterator min_it = std::min_element(arr.begin(), arr.end());
-    std::vector<int>::iterator max_it = std::max_element(arr.begin(), arr.end());
+    int minValue = arr[0];
+    int maxValue = arr[0];
 
-    return static_cast<unsigned int>(*max_it) - static_cast<unsigned int>(*min_it);
+    for (size_t i = 1; i < arr.size(); i++)
+    {
+        if (arr[i] < minValue)
+            minValue = arr[i];
+        if (arr[i] > maxValue)
+            maxValue = arr[i];
+    }
+
+    return spanDistance(maxValue, minValue);
 }
 
 
 
-
-unsigned int     Span::shortestSpan()
-{
-    if(arr.size() < 2)
-        throw Span::not_enough();
+// unsigned int     Span::shortestSpan() const 
+// {
+//     if(arr.size() < 2)
+//         throw Span::not_enough();
     
+//     std::vector<int> tmp = arr;
+//     std::sort(tmp.begin(), tmp.end());
+
+//     unsigned int  shortest = tmp[1] - tmp[0];
+//     for(size_t i = 1 ; i < tmp.size() - 1; i++)
+//     {
+//         unsigned int  check = tmp[1 + i ] - tmp[i];
+//         if(shortest > check)
+//             shortest = check;
+//     }
+//     return shortest;
+// }
+unsigned int Span::shortestSpan() const
+{
+    if (arr.size() < 2)
+        throw Span::not_enough();
+
     std::vector<int> tmp = arr;
     std::sort(tmp.begin(), tmp.end());
 
-    unsigned int  shortest = tmp[1] - tmp[0];
-    for(size_t i = 1 ; i < tmp.size() - 1; i++)
+    unsigned int shortest = spanDistance(tmp[1], tmp[0]);
+
+    for (size_t i = 1; i + 1 < tmp.size(); i++)
     {
-        unsigned int  check = tmp[1 + i ] - tmp[i];
-        if(shortest > check)
+        unsigned int check = spanDistance(tmp[i + 1], tmp[i]);
+
+        if (check < shortest)
             shortest = check;
+
+        if (shortest == 0)
+            return 0;
     }
+
     return shortest;
 }
