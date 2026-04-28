@@ -34,7 +34,7 @@ void Span::addNumber(int number)
 
 
     if (arr.size() >= max) {
-        throw span::spanfull("Span is already full!");
+        throw span::spanfull();
     }
     
     arr.push_back(number);
@@ -43,7 +43,7 @@ void Span::addNumber(int number)
 
 int Span::shortestSpan() {
     if (arr.size() < 2) {
-        throw std::logic_error("Not enough numbers to calculate a span!");
+        throw span::not_enough();
     }
     // We will write the math logic for this next!
     std::vector<int>::iterator min_it = std::min_element(arr.begin(), arr.end());
@@ -53,7 +53,7 @@ int Span::shortestSpan() {
 
 int Span::longestSpan() {
     if (arr.size() < 2) {
-        throw std::logic_error("Not enough numbers to calculate a span!");
+        throw span::not_enough();
     }
 
 

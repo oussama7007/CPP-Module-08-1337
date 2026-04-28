@@ -27,12 +27,13 @@ class Span
         
         
         ~Span();
-        class   not_enough 
+        
+        class   not_enough : public std::exception 
         {
             public:
                 const char * what() const throw()
                 {
-                    
+                    return "Not enough numbers to calculate a span!";
                 }
         };
         class   spanfull : public std::exception
