@@ -40,7 +40,7 @@ void Span::addNumber(int number)
     arr.push_back(number);
 }
 
-int Span::longestSpan()
+unsigned int Span::longestSpan()
 {
     if (arr.size() < 2)
         throw Span::not_enough();
@@ -48,13 +48,13 @@ int Span::longestSpan()
     std::vector<int>::iterator min_it = std::min_element(arr.begin(), arr.end());
     std::vector<int>::iterator max_it = std::max_element(arr.begin(), arr.end());
 
-    return (unsigned int )*max_it - (unsigned int )*min_it;
+    return static_cast<unsigned int>(*max_it) - static_cast<unsigned int>(*min_it);
 }
 
 
 
 
-int     Span::shortestSpan()
+unsigned int     Span::shortestSpan()
 {
     if(arr.size() < 2)
         throw Span::not_enough();
@@ -62,10 +62,10 @@ int     Span::shortestSpan()
     std::vector<int> tmp = arr;
     std::sort(tmp.begin(), tmp.end());
 
-    int shortest = tmp[1] - tmp[0];
+    unsigned int  shortest = tmp[1] - tmp[0];
     for(size_t i = 1 ; i < tmp.size() - 1; i++)
     {
-        int check = tmp[1 + i ] - tmp[i];
+        unsigned int  check = tmp[1 + i ] - tmp[i];
         if(shortest > check)
             shortest = check;
     }

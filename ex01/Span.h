@@ -46,6 +46,6 @@ class Span
         };
      
         void addNumber(int number);
-        int shortestSpan();
-        int longestSpan();
+        unsigned int shortestSpan();
+        unsigned int longestSpan();
 };
