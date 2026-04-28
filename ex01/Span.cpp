@@ -34,10 +34,9 @@ void Span::addNumber(int number)
 
 
     if (arr.size() >= max) {
-        throw std::length_error("Span is already full! Cannot add more numbers.");
+        throw std::length_error("Span is already full!");
     }
     
-    // 2. If it's not full, add the number to the vector
     arr.push_back(number);
 }
 

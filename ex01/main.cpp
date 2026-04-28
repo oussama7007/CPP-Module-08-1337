@@ -90,7 +90,7 @@
 int main()
 {
     std::vector<std::string> arr;
-    arr.push_back("sdfsdF");
-    arr.push_back("sdf");
-    std::cout << arr.size() << std::endl;
+    std::vector<std::string > arr1;
+
+
 }
