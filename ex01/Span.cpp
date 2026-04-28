@@ -58,7 +58,7 @@ int Span::longestSpan() {
     }
 
 
-// 2. Create a copy of the array so we don't destroy the user's original order
+    // 2. Create a copy of the array so we don't destroy the user's original order
     std::vector<int> sorted_arr = arr;
     
     
