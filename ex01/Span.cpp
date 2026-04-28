@@ -34,58 +34,40 @@ void Span::addNumber(int number)
 
 
     if (arr.size() >= max) {
-        throw span::spanfull();
+        throw Span::spanfull();
     }
     
     arr.push_back(number);
 }
 
+int Span::longestSpan()
+{
+    if (arr.size() < 2)
+        throw Span::not_enough();
 
-int Span::shortestSpan() {
-    if (arr.size() < 2) {
-        throw span::not_enough();
-    }
-    // We will write the math logic for this next!
     std::vector<int>::iterator min_it = std::min_element(arr.begin(), arr.end());
     std::vector<int>::iterator max_it = std::max_element(arr.begin(), arr.end());
-    return *max_it - *min_it; 
+
+    return *max_it - *min_it;
 }
 
-int Span::longestSpan() {
-    if (arr.size() < 2) {
-        throw span::not_enough();
+
+
+
+int     Span::shortestSpan()
+{
+    if(arr.size() < 2)
+        throw Span::not_enough();
+    
+    std::vector<int> tmp = arr;
+    std::sort(tmp.begin(), tmp.end());
+
+    int shortest = tmp[1] - tmp[0];
+    for(size_t i = 1 ; i < tmp.size() - 1; i++)
+    {
+        int check = tmp[1 + i ] - tmp[i];
+        if(shortest > check)
+            shortest = check;
     }
-
-
-    // 2. Create a copy of the array so we don't destroy the user's original order
-    std::vector<int> sorted_arr = arr;
-    
-    
-    
-    // 3. Sort the copy (This puts the closest numbers right next to each other)
-    std::sort(sorted_arr.begin(), sorted_arr.end());
-
-
-
-    // 4. Initialize our shortest span tracker to a very high number
-    // INT_MAX is the highest possible integer, so the first difference we find will definitely be smaller.
-    int min_span = std::numeric_limits<int>::max();
-
-
-
-    // 5. Loop through the sorted array to compare adjacent elements
-    // We stop at size() - 1 because we are looking at 'i' and 'i + 1'
-    for (size_t i = 0; i < sorted_arr.size() - 1; ++i) {
-        
-        // Calculate the difference between the current number and the next one
-        int difference = sorted_arr[i + 1] - sorted_arr[i];
-        
-        // If this difference is smaller than our current record, update the record!
-        if (difference < min_span) {
-            min_span = difference;
-        }
-    }
-
-    // 6. Return the smallest difference we found
-    return min_span;
+    return shortest;
 }
