@@ -34,7 +34,7 @@ void Span::addNumber(int number)
 
 
     if (arr.size() >= max) {
-        throw std::length_error("Span is already full!");
+        throw span::spanfull("Span is already full!");
     }
     
     arr.push_back(number);

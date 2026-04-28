@@ -27,7 +27,22 @@ class Span
         
         
         ~Span();
-
+        class   not_enough 
+        {
+            public:
+                const char * what() const throw()
+                {
+                    
+                }
+        };
+        class   spanfull : public std::exception
+        {
+                public:
+                    const char * what() const throw()
+                    {
+                        return "span is full!";
+                    }
+        };
      
         void addNumber(int number);
         int shortestSpan();
