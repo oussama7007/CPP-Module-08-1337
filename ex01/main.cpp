@@ -12,15 +12,15 @@
 #include <cstdlib> // For rand()
 #include <ctime>   // For time()
 #include "Span.h"
-
+#include <climits>
 int main()
 {
 
     std::cout << "--- TEST 1: Basic Subject Test ---" << std::endl;
     try {
-        Span sp = Span(2000000000);
-        sp.addNumber(4000000000);
-        sp.addNumber(-2000000000);
+        Span sp = Span(2);
+        sp.addNumber(INT_MAX);
+        sp.addNumber(INT_MIN);
         // sp.addNumber(17);
         // sp.addNumber(9);
         // sp.addNumber(11);

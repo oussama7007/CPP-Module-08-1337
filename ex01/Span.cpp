@@ -83,6 +83,8 @@ unsigned int Span::longestSpan() const
 //     }
 //     return shortest;
 // }
+
+
 unsigned int Span::shortestSpan() const
 {
     if (arr.size() < 2)
