@@ -47,22 +47,20 @@ int main()
         Span tiny(1);
         tiny.addNumber(100);
         std::cout << "Trying to find span of 1 number..." << std::endl;
-        tiny.shortestSpan(); // This SHOULD throw an exception!
+        tiny.shortestSpan(); 
     } catch (const std::exception& e) {
         std::cerr << "Caught expected error: " << e.what() << std::endl;
     }
 
-    // ========================================================
-    // TEST 3: The 10,000 Number Stress Test
-    // ========================================================
+
     std::cout << "\n--- TEST 3: 10,000 Numbers ---" << std::endl;
     try {
-        Span massive(10000);
+        Span massive(1000000000);
         
-        // Seed the random number generator
+
         std::srand(std::time(0)); 
         
-        // Let's add 10,000 random numbers one by one
+      
         for (int i = 0; i < 10000; ++i) {
             massive.addNumber(std::rand()); 
         }
