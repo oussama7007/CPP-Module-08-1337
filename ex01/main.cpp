@@ -55,11 +55,15 @@ int main()
 
     std::cout << "\n--- TEST 3: 10,000 Numbers ---" << std::endl;
     try {
-        Span massive(1000000000);
+        std::vector<int> numbers;
+        for(int i = 0; i < 100000; i++)
+            numbers.push_back(i);
         
+        Span massive(100000);
 
-        massive.addnum()
-        std::cout << "Successfully added 10,000 numbers!" << std::endl;
+
+        massive.addNumbers(numbers.begin(), numbers.end());
+        std::cout << "Successfully added 100,000 numbers!" << std::endl;
         std::cout << "Massive Shortest Span: " << massive.shortestSpan() << std::endl;
         std::cout << "Massive Longest Span: " << massive.longestSpan() << std::endl;
     } catch (const std::exception& e) {

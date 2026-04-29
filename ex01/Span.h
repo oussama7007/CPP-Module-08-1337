@@ -46,14 +46,15 @@ class Span
         };
 
         template <typename T>
-        void    addnum(T begin, T end)
+        void    addNumbers(T begin, T end)
         {
-            typename std::iterator_traits<Iterator>::differnce_type count;
+            typename std::iterator_traits<T>::difference_type count;
 
             count = std::distance(begin, end);
             if(count < 0)
                 throw Span::spanfull();
-            if(static_cast<size_t>(count) > static_cast<max> - arr.size())
+            
+            if(static_cast<size_t>(count) > static_cast<size_t>( max - arr.size()))
                 throw Span::spanfull();
             arr.insert(arr.end(), begin, end);
         }
