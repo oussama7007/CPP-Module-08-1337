@@ -43,6 +43,7 @@ void Span::addNumber(int number)
 static unsigned int spanDistance(int bigger, int smaller)
 {
     return static_cast<unsigned int>(bigger) - static_cast<unsigned int>(smaller);
+    
 }
 
 unsigned int Span::longestSpan() const

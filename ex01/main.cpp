@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdlib> // For rand()
+#include <cstdlib>
 #include <ctime>   // For time()
 #include "Span.h"
 #include <climits>
@@ -56,13 +56,16 @@ int main()
     std::cout << "\n--- TEST 3: 10,000 Numbers ---" << std::endl;
     try {
         std::vector<int> numbers;
-        // for(int i = 0; i < 2; i++)
-            numbers.push_back(INT_MAX);
-            numbers.push_back(INT_MIN);
+        numbers.reserve(100000);
         
-        Span massive(2);
+        srand(time(NULL));
 
+        for(int i = 0; i < 100000 ; i++) {
+            
+            numbers.push_back(rand()); 
+        }
 
+        Span massive(100000);
         massive.addNumbers(numbers.begin(), numbers.end());
         std::cout << "Successfully added 100,000 numbers!" << std::endl;
         std::cout << "Massive Shortest Span: " << massive.shortestSpan() << std::endl;
