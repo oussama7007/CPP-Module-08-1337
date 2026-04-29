@@ -66,23 +66,6 @@ unsigned int Span::longestSpan() const
 
 
 
-// unsigned int     Span::shortestSpan() const 
-// {
-//     if(arr.size() < 2)
-//         throw Span::not_enough();
-    
-//     std::vector<int> tmp = arr;
-//     std::sort(tmp.begin(), tmp.end());
-
-//     unsigned int  shortest = tmp[1] - tmp[0];
-//     for(size_t i = 1 ; i < tmp.size() - 1; i++)
-//     {
-//         unsigned int  check = tmp[1 + i ] - tmp[i];
-//         if(shortest > check)
-//             shortest = check;
-//     }
-//     return shortest;
-// }
 
 
 unsigned int Span::shortestSpan() const

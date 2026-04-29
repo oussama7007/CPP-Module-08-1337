@@ -44,6 +44,19 @@ class Span
                         return "span is full!";
                     }
         };
+
+        template <typename T>
+        void    addnum(T begin, T end)
+        {
+            typename std::iterator_traits<Iterator>::differnce_type count;
+
+            count = std::distance(begin, end);
+            if(count < 0)
+                throw Span::spanfull();
+            if(static_cast<size_t>(count) > static_cast<max> - arr.size())
+                throw Span::spanfull();
+            arr.insert(arr.end(), begin, end);
+        }
      
         void addNumber(int number);
         unsigned int shortestSpan() const ;

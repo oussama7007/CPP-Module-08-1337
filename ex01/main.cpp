@@ -18,12 +18,12 @@ int main()
 
     std::cout << "--- TEST 1: Basic Subject Test ---" << std::endl;
     try {
-        Span sp = Span(2);
-        sp.addNumber(INT_MAX);
-        sp.addNumber(INT_MIN);
-        // sp.addNumber(17);
-        // sp.addNumber(9);
-        // sp.addNumber(11);
+        Span sp(20) ;//= Span(20);
+            sp.addNumber(6);
+            sp.addNumber(3);
+            sp.addNumber(17);
+            sp.addNumber(9);
+            sp.addNumber(11);
         
         std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl; // Expected: 2
         std::cout << "Longest Span: " << sp.longestSpan() << std::endl;   // Expected: 14
@@ -58,13 +58,7 @@ int main()
         Span massive(1000000000);
         
 
-        std::srand(std::time(0)); 
-        
-      
-        for (int i = 0; i < 10000; ++i) {
-            massive.addNumber(std::rand()); 
-        }
-        
+        massive.addnum()
         std::cout << "Successfully added 10,000 numbers!" << std::endl;
         std::cout << "Massive Shortest Span: " << massive.shortestSpan() << std::endl;
         std::cout << "Massive Longest Span: " << massive.longestSpan() << std::endl;
