@@ -49,8 +49,9 @@ class Span
         void    addNumbers(T begin, T end)
         {
             typename std::iterator_traits<T>::difference_type count;
-
-            count = std::distance(begin, end);
+            
+            count = std::distance(begin, end); // djistance returns the number of elemnts between two itrators donc ila kan end first ghadir tkon nigative
+        
             if(count < 0)
                 throw Span::spanfull();
             

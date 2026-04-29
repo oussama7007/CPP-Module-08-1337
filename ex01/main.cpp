@@ -56,10 +56,11 @@ int main()
     std::cout << "\n--- TEST 3: 10,000 Numbers ---" << std::endl;
     try {
         std::vector<int> numbers;
-        for(int i = 0; i < 100000; i++)
-            numbers.push_back(i);
+        // for(int i = 0; i < 2; i++)
+            numbers.push_back(INT_MAX);
+            numbers.push_back(INT_MIN);
         
-        Span massive(100000);
+        Span massive(2);
 
 
         massive.addNumbers(numbers.begin(), numbers.end());
