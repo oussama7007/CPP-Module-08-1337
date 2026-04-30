@@ -10,7 +10,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include <ctime>   // For time()
+#include <ctime>   
 #include "Span.h"
 #include <climits>
 int main()

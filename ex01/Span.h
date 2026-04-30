@@ -1,5 +1,7 @@
 
-#pragma once
+#ifndef SPAN_H
+#define SPAN_H
+
 
 #include <vector>
 #include <algorithm>
@@ -64,3 +66,6 @@ class Span
         unsigned int shortestSpan() const ;
         unsigned int longestSpan() const;
 };
+
+
+#endif

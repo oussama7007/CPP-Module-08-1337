@@ -38,8 +38,9 @@ int main() {
         std::cout << "Searching for 0..." << std::endl;
         easyfind(myList, 0);
     } catch (const std::exception& e) {
-        std::cerr << "Ciaught Excepton: " << e.what() << std::endl;
+        std::cerr << "Caught Exception: " << e.what() << std::endl;
     }
+    
 
     return 0;
 }
