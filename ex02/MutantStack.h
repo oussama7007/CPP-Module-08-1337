@@ -11,9 +11,8 @@
 #include <stack>   
 #include <deque>
 
-// MANDATORY: You must tell the compiler this is a template class BEFORE the class keyword
 template <typename T>
-class MutantStack : public std::stack<T> // MANDATORY: Inherit from std::stack, not vector
+class MutantStack : public std::stack<T> 
 {
 public:
 

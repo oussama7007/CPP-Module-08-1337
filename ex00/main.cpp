@@ -41,6 +41,21 @@ int main() {
         std::cerr << "Caught Exception: " << e.what() << std::endl;
     }
     
+    std::cout << "\n============ const not found test===========\n" << std::endl;
+
+    int arr[] = {1,55,9};
+  
+
+    const std::vector<int> my_v(arr, arr + 3);
+    try
+    {
+        std::vector<int>::const_iterator it = easyfind(my_v, 9);
+        std::cout << "Found value: " << *it << std::endl;
+    }
+    catch(const std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }

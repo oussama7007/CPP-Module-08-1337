@@ -8,6 +8,7 @@
 #include <iostream>
 #include <exception>
 
+
 class Span 
 {
     private:
@@ -52,10 +53,10 @@ class Span
         {
             typename std::iterator_traits<T>::difference_type count;
             
-            count = std::distance(begin, end); // djistance returns the number of elemnts between two itrators donc ila kan end first ghadir tkon nigative
+            count = std::distance(begin, end); 
             
             if(count < 0)
-                throw Span::spanfull();
+                throw Span::not_enough();
             
             if(static_cast<size_t>(count) > static_cast<size_t>( max - arr.size()))
                 throw Span::spanfull();
