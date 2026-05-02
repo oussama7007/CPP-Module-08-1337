@@ -11,7 +11,7 @@ int main() {
     for(int i = 0 ; i < 100; i++) {
         numbers.push_back(i + 10); 
     }
-
+    
     try {
         
         std::vector<int>::iterator it = easyfind(numbers, 12);
