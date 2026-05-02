@@ -5,8 +5,6 @@
 #ifndef MUTANTSTACK_H
 #define MUTANTSTACK_H
 
-
-
 #include <iostream>
 #include <stack>   
 #include <deque>
@@ -29,9 +27,8 @@ public:
         return *this;
     }
 
-    
-    typedef typename std::stack<T>::container_type::iterator iterator;
 
+    typedef typename std::stack<T>::container_type::iterator iterator;
   
     iterator begin() {
         return this->c.begin();
@@ -51,6 +48,4 @@ public:
         return this->c.end();
     }
 };
-
-
 #endif

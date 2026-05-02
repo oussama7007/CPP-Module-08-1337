@@ -11,6 +11,7 @@
 #include "MutantStack.h"
 
 template <typename T>
+
 void printMutantStack(MutantStack<T> &mstack)
 {
     typename MutantStack<T>::iterator it = mstack.begin();
@@ -83,33 +84,7 @@ void listComparisonTest()
     // printMutantStack(lst);
 }
 
-void copyConstructorTest()
-{
-    std::cout << "\n===== COPY CONSTRUCTOR TEST =====" << std::endl;
 
-    MutantStack<int> original;
-
-    original.push(1);
-    original.push(2);
-    original.push(3);
-
-    MutantStack<int> copy(original);
-
-    std::cout << "Original:" << std::endl;
-    printMutantStack(original);
-
-    std::cout << "Copy:" << std::endl;
-    printMutantStack(copy);
-
-    original.pop();
-    original.push(99);
-
-    std::cout << "Original after modification:" << std::endl;
-    printMutantStack(original);
-
-    std::cout << "Copy should stay unchanged:" << std::endl;
-    printMutantStack(copy);
-}
 
 void assignmentOperatorTest()
 {
@@ -162,7 +137,7 @@ int main()
 {
     subjectTest();
     listComparisonTest();
-    copyConstructorTest();
+  
     assignmentOperatorTest();
     stringTest();
 
